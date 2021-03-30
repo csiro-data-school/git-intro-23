@@ -15,7 +15,9 @@ keypoints:
 
 ## Navigating a git repository more easily
 
-So far we have gone back in our git history by doing checking out a particular commit (eg `git checkout e03af1`). 
+So far we have gone back in our git history one step by doing checking out a file from the most recent commit (eg `git checkout ingredients.txt`).
+
+It is possible to checkout the entire state from a previous commit (rather than a single file) by referring to that commit (eg `git checkout e03af1`).
 
 After doing that, you will see a message from git that starts with the ominous warning: `You are in 'detached HEAD' state.`
 
