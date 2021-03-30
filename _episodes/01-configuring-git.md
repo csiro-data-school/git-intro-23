@@ -88,6 +88,7 @@ Below is a list of commands to set the default editor to a list of common tools.
 | Atom | `$ git config --global core.editor "atom --wait"`|
 | nano               | `$ git config --global core.editor "nano -w"`    |
 | BBEdit (Mac, with command line tools) | `$ git config --global core.editor "bbedit -w"`    |
+| VS Code | `$ git config --global core.editor "code --wait"` |
 | Sublime Text (Mac) | `$ git config --global core.editor "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl -n -w"` |
 | Sublime Text (Win, 32-bit install) | `$ git config --global core.editor "'c:/program files (x86)/sublime text 3/sublime_text.exe' -w"` |
 | Sublime Text (Win, 64-bit install) | `$ git config --global core.editor "'c:/program files/sublime text 3/sublime_text.exe' -w"` |
