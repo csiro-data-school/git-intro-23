@@ -114,4 +114,18 @@ Below is a list of commands to set the default editor to a list of common tools.
 {: .callout}
 
 
+## Optional: Git GUI
+
+You might find it easier to know what is going on if you install a Graphical User Interface.
+
+There are many options here. 
+Depending on your installation of git you might have a built-in basic GUI called `gitk` or `[QGit](https://github.com/tibirna/qgit#readme)`.
+This is free.
+Alternatively you might try a commercial git GUI. Here are some popular ones:
+
+* [Sublime merge](https://www.sublimemerge.com/) (macOS, Windows, Linux)
+* [Gitkraken](https://www.gitkraken.com/) (macOS, Windows, Linux) 
+* [Fork](https://git-fork.com/) (macOS, Windows)
+
+None of these are needed for this introductory tutorial, but they can be helpful to build understanding.
 
