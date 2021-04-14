@@ -23,7 +23,7 @@ In the previous section we tracked a guacamole recipe with Git.
 Up until now our repository had only one branch with one commit coming
 after the other:
 
-![Linear]({{ site.baseurl }}/img/gitink/git-branch-1.svg "Linear git
+![Linear]({{ site.baseurl }}/fig/gitink/git-branch-1.svg "Linear git
 repository"){:class="img-responsive"}
 
 - Commits are depicted here as little boxes with abbreviated hashes.
@@ -51,7 +51,7 @@ different tracks of work**, which can later be merged to create a composite
 version that contains all changes:
 
 ![Git collaborative]({{ site.baseurl }}/img/gitink/git-collaborative.svg
-"description"){:class="img-responsive"}
+"description"){:class="fig-responsive"}
 
 - We see branching points and merging points.
 - Main line development is often called `master`.
@@ -241,7 +241,7 @@ $ git graph
 >
 > Here is a graphical representation of what we have created:
 >
-> ![]({{ site.baseurl }}/img/gitink/git-branch-2.svg)
+> ![]({{ site.baseurl }}/fig/gitink/git-branch-2.svg)
 >
 > - Now switch to `master`.
 > - Add and commit the following `README.md` to `master`:
@@ -268,7 +268,7 @@ $ git graph
 > * 2d79e7e adding ingredients and instructions
 > ```
 >
-> ![]({{ site.baseurl }}/img/gitink/git-branch-3.svg)
+> ![]({{ site.baseurl }}/fig/gitink/git-branch-3.svg)
 >
 > And for comparison this is how it looks [on GitHub](https://github.com/coderefinery/recipe/network).
 {: .challenge}
@@ -312,7 +312,7 @@ Then we merge `experiment` into `master`:
 $ git merge experiment
 ```
 
-![]({{ site.baseurl }}/img/gitink/git-merge-1.svg)
+![]({{ site.baseurl }}/fig/gitink/git-merge-1.svg)
 
 We can verify the result in the terminal:
 
@@ -354,7 +354,7 @@ $ git branch  # make sure you are on master
 $ git merge less-salt
 ```
 
-![]({{ site.baseurl }}/img/gitink/git-merge-2.svg)
+![]({{ site.baseurl }}/fig/gitink/git-merge-2.svg)
 
 We can verify the result in the terminal:
 
@@ -418,7 +418,7 @@ Deleted branch less-salt (was bf59be6).
 
 This is the result:
 
-![]({{ site.baseurl }}/img/gitink/git-deleted-branches.svg)
+![]({{ site.baseurl }}/fig/gitink/git-deleted-branches.svg)
 
 Compare in the terminal:
 
@@ -453,7 +453,7 @@ may have a hard time finding them as there is no branch pointing to them.
 > 1. Create a new branch from `master` and switch to it.
 > 2. Create a couple of commits on the new branch (for instance edit `README.md`):
 >
->     ![]({{ site.baseurl }}/img/gitink/git-pre-ff.svg)
+>     ![]({{ site.baseurl }}/fig/gitink/git-pre-ff.svg)
 >
 > 3. Now switch to `master`.
 > 4. Merge the new branch to `master`.
