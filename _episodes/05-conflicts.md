@@ -14,7 +14,7 @@ keypoints:
 
 ## Conflict resolution
 
-<img src="{{ site.baseurl }}/img/conflict-resolution/conflict.png" width="60%">
+<img src="{{ site.baseurl }}/fig/conflict-resolution/conflict.png" width="60%">
 
 In most cases a `git merge` runs smooth and automatic.
 Then a merge commit appears (unless fast-forward) without you even noticing.
@@ -289,7 +289,7 @@ Simple steps:
 > $ git mergetool
 > ```
 >
-> <img src="{{ site.baseurl }}/img/conflict-resolution/mergetool.png" width="100%">
+> <img src="{{ site.baseurl }}/fig/conflict-resolution/mergetool.png" width="100%">
 >
 > - Your current branch is left, the branch you merge is right, result is in the middle.
 > - After you are done, close and commit, `git add` is not needed when using `git mergetool`.
