@@ -41,8 +41,9 @@ To be absolutely sure your local work won't conflict with someone else's, always
 
 > ## Challenge
 >
-> Go to https://github.com/csiro-mlai/git-practice/ and clone the repository. Create a new branch (give it a meaningful name!) on your local copy and make a change to the readme (whatever you like). Push your changes to the remote.
-> Once other collaborators have pushed changes, see if you can pull their contributions to your local repo.
+> - Go to [https://github.com/csiro-mlai/git-practice/](https://github.com/csiro-mlai/git-practice/) and clone the repository. Create a new branch (give it a meaningful name!) on your local copy and make a change to the readme (whatever you like). 
+> - Push your changes to the remote.
+> - Once other collaborators have pushed changes, see if you can pull their contributions to your local repo.
 {: .challenge}
 
 ## A remote without write access
@@ -52,7 +53,7 @@ Lots of open source projects welcome contributions from the community, but clear
 ### Forking a repo
 Forking a repository is making your own copy of a remote. For example, the pytorch repo is hosted at `github.com/pytorch/pytorch`. By forking that repository, you can have your own copy of the complete history of the project at `github.com/[your_username]/pytorch`. To fork a repository on github, click on the Fork button at the top right of the page.
 
-<img src="{{ site.baseurl }}/fig/github-fork.jpeg" width="60%">
+<img src="{{ site.baseurl }}/fig/github-fork.jpg" width="60%">
 
 ### Submitting a pull request
 
@@ -66,7 +67,7 @@ Github has really good support for this process, and gives helpful prompts if yo
 
 > ## Challenge
 >
-> Go to https://github.com/csiro-mlai/pull-request-practice - a repo that you do not have write access to.
+> Go to [https://github.com/csiro-mlai/pull-request-practice](https://github.com/csiro-mlai/pull-request-practice) - a repo that you do not have write access to.
 > 1. Fork the repo to your personal account
 > 2. Clone your forked repo
 > 3. Make a change in your local repo and push it to your forked copy
