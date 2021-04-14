@@ -50,7 +50,7 @@ The strength of version control is that it permits the researcher to **isolate
 different tracks of work**, which can later be merged to create a composite
 version that contains all changes:
 
-![Git collaborative]({{ site.baseurl }}/img/gitink/git-collaborative.svg
+![Git collaborative]({{ site.baseurl }}/fig/gitink/git-collaborative.svg
 "description"){:class="fig-responsive"}
 
 - We see branching points and merging points.
