@@ -108,3 +108,23 @@ that haven't been staged/committed!
 > {: .solution}
 {: .challenge}
 
+## Recovering a previous versions
+
+Because git stores the complete history of whatever snapshots you have recorded, you can step back to anyone of them at different levels of detail, from the complete working directory, to single files, even to single changes within files.
+
+To get back to a previous state for the whole working directory, you can use `git checkout [commit]`. This can be useful for having a look at files, but you'll get a warning about a detached HEAD (more discussion later).
+
+### Recovering previous versions of single files
+
+Often it's useful to be able to access a previous version of a particular file. When the `checkout` command is given a file path (along with a reference to a commit) it will update that path to the previous state.
+
+Let's see that with our recipe. If we wanted to get `ingredients.txt` back to its state before the addition of the onion, we could run
+
+```
+git checkout 2d79e7e ingredients.txt
+
+Updated 1 path from 2d79e7e
+```
+
+If you run `git status` you'll see that the changes to the file `ingredients.txt`, bringing it back to the previous state, are already staged and ready to be committed.
+
