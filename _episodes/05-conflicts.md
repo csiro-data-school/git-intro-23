@@ -42,12 +42,12 @@ together.  Git won't decide which to take for you, so will present it
 to you for deciding.  We do that and commit again to resolve the
 conflict.
 
-- Create two branches from `master`: one called `like-cilantro`, one called `dislike-cilantro`:
+- Create two branches from `main`: one called `like-cilantro`, one called `dislike-cilantro`:
 
 ```shell
 $ git graph
 
-*   4b3e3cc (HEAD -> master, like-cilantro, dislike-cilantro) Merge branch 'less-salt'
+*   4b3e3cc (HEAD -> main, like-cilantro, dislike-cilantro) Merge branch 'less-salt'
 |\
 | * bf59be6 reduce amount of salt
 * |   80351a9 Merge branch 'experiment'
@@ -70,7 +70,7 @@ $ git graph
 * eee4b85 (dislike-cilantro) reduce cilantro to 0.5
 | * 55d1ce2 (like-cilantro) please more cilantro
 |/
-*   4b3e3cc (HEAD -> master) Merge branch 'less-salt'
+*   4b3e3cc (HEAD -> main) Merge branch 'less-salt'
 |\
 | * bf59be6 reduce amount of salt
 * |   80351a9 Merge branch 'experiment'
@@ -88,7 +88,7 @@ $ git graph
 On the branch `like-cilantro` we have the following change:
 
 ```
-$ git diff master like-cilantro
+$ git diff main like-cilantro
 ```
 
 ```diff
@@ -107,7 +107,7 @@ index a83af39..83f2f94 100644
 And on the branch `dislike-cilantro` we have the following change:
 
 ```
-$ git diff master dislike-cilantro
+$ git diff main dislike-cilantro
 ```
 
 ```diff
@@ -123,12 +123,12 @@ index a83af39..2f60e23 100644
  * 1 tsp salt
 ```
 
-### What do you expect will happen when we try to merge these two branches into master?
+### What do you expect will happen when we try to merge these two branches into main?
 
 The first merge will work:
 
 ```shell
-$ git checkout master
+$ git checkout main
 $ git status
 $ git merge like-cilantro
 
@@ -155,7 +155,7 @@ but since there is a conflict, Git did not commit:
 ```shell
 $ git status
 
-On branch master
+On branch main
 You have unmerged paths.
   (fix conflicts and run "git commit")
   (use "git merge --abort" to abort the merge)

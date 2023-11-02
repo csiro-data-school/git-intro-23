@@ -66,7 +66,7 @@ We will use `git status` a lot to check out to see what is going on with the rep
 ```shell
 $ git status
 
-On branch master
+On branch main
 
 No commits yet
 
@@ -79,7 +79,8 @@ We will make sense of this information during this lesson.
 ## So what exactly is a Git repository?
 
 - Remember Git is a *version control system*: it records snapshots and tracks the content of a folder as it changes over time.
-- Every time we **commit** a snapshot, Git records a snapshot of the **entire project**, saves it, and assigns it a version.
+- Every time we **commit** a snapshot, Git records a snapshot of the **entire project**, saves it, and assigns it a version.  
+- It does this efficiently, by recording just the changes from one snapshot to the next, called the 'diff'. 
 - These snapshots are kept inside the `.git` sub-folder.
 - If we remove `.git`, we remove the repository and history (but keep the working directory!).
 - `.git` uses relative paths - you can move the whole thing somewhere else and it will still work
@@ -143,7 +144,7 @@ do when you are trying to figure out what to do next:
 ```shell
 $ git status
 
-On branch master
+On branch main
 
 No commits yet
 
@@ -167,7 +168,7 @@ $ git add ingredients.txt
 $ git add instructions.txt
 $ git status
 
-On branch master
+On branch main
 
 Initial commit
 
@@ -185,7 +186,7 @@ Let's now commit the change to the repository:
 ```shell
 $ git commit -m "adding ingredients and instructions"
 
-[master (root-commit) aa243ea] adding ingredients and instructions
+[main (root-commit) aa243ea] adding ingredients and instructions
  2 files changed, 8 insertions(+)
  create mode 100644 ingredients.txt
  create mode 100644 instructions.txt

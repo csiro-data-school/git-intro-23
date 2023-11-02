@@ -34,7 +34,7 @@ If changes are **uncommitted**, they are not safe, and if they are deleted, they
 ```
 $ git log --oneline
 
-f960dd3 (HEAD -> master) not sure this is a good idea
+f960dd3 (HEAD -> main) not sure this is a good idea
 40fbb90 draft a readme
 dd4472c we should not forget to enjoy
 2bb9bb4 add half an onion
@@ -53,7 +53,7 @@ The old commit remains in the history:
 ```
 $ git log --oneline
 
-d62ad3e (HEAD -> master) Revert "not sure this is a good idea"
+d62ad3e (HEAD -> main) Revert "not sure this is a good idea"
 f960dd3 not sure this is a good idea
 40fbb90 draft a readme
 dd4472c we should not forget to enjoy

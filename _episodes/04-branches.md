@@ -27,7 +27,7 @@ after the other:
 repository"){:class="img-responsive"}
 
 - Commits are depicted here as little boxes with abbreviated hashes.
-- Here the branch `master` points to a commit.
+- Here the branch `main` points to a commit.
 - "HEAD" is the current position (remember the recording head of tape recorders?).
 - When we talk about branches, we often mean all parent commits, not only the commit pointed to.
 
@@ -54,8 +54,8 @@ version that contains all changes:
 "description"){:class="fig-responsive"}
 
 - We see branching points and merging points.
-- Main line development is often called `master`.
-- Other than this convention there is nothing special about `master`, it is just a branch.
+- Main line development is often called `main` (or `master` in older conventions).
+- Other than this convention there is nothing special about `main`, it is just a branch.
 - Commits form a directed acyclic graph (we have left out the arrows to avoid confusion about the time arrow).
 
 A group of commits that create a single narrative are called a **branch**.
@@ -82,18 +82,18 @@ Let us inspect the project history using the `git graph` alias:
 ```shell
 $ git graph
 
-* dd4472c (HEAD -> master) we should not forget to enjoy
+* dd4472c (HEAD -> main) we should not forget to enjoy
 * 2bb9bb4 add half an onion
 * 2d79e7e adding ingredients and instructions
 ```
 
 - We have three commits and only
-  one development line (branch) and this branch is called `master`.
+  one development line (branch) and this branch is called `main`.
 - Commits are states characterized by a 40-character hash (checksum).
 - `git graph` print abbreviations of these checksums.
 - **Branches are pointers that point to a commit.**
-- Branch `master` points to commit `dd4472c8093b7bbcdaa15e3066da6ca77fcabadd`.
-- `HEAD` is another pointer, it points to where we are right now (currently `master`)
+- Branch `main` points to commit `dd4472c8093b7bbcdaa15e3066da6ca77fcabadd`.
+- `HEAD` is another pointer, it points to where we are right now (currently `main`)
 
 ### On which branch are we?
 
@@ -102,11 +102,11 @@ To see where we are (where HEAD points to) use `git branch`:
 ```shell
 $ git branch
 
-* master
+* main
 ```
 
 - This command shows where we are, it does not create a branch.
-- There is only `master` and we are on `master` (star represents the `HEAD`).
+- There is only `main` and we are on `main` (star represents the `HEAD`).
 
 In the following we will learn how to create branches,
 how to switch between them, how to merge branches,
@@ -119,7 +119,7 @@ and how to remove them afterwards.
 Let's create a branch called `experiment` where we add cilantro to `ingredients.txt`.
 
 ```shell
-$ git branch experiment master   # create branch called "experiment" from master
+$ git branch experiment main   # create branch called "experiment" from main
                                  # pointing to the present commit
 $ git checkout experiment        # switch to branch "experiment"
 $ git branch                     # list all local branches and show on which branch we are
@@ -132,7 +132,7 @@ $ git branch                     # list all local branches and show on which bra
 $ git branch
 
 * experiment
-  master
+  main
 ```
 
 - Then add 2 tbsp cilantro **on top** of the `ingredients.txt`:
@@ -155,12 +155,12 @@ $ git graph
 
 * 6feb49d (HEAD -> experiment) maybe little bit less cilantro
 * 7cf6d8c let us try with some cilantro
-* dd4472c (master) we should not forget to enjoy
+* dd4472c (main) we should not forget to enjoy
 * 2bb9bb4 add half an onion
 * 2d79e7e adding ingredients and instructions
 ```
 
-- The branch `experiment` is two commits ahead of `master`.
+- The branch `experiment` is two commits ahead of `main`.
 - We commit our changes to this branch.
 
 ---
@@ -206,13 +206,13 @@ $ git graph
 > to each branch.  We will use this in the next section, to practice
 > merging.
 >
-> - Change to the branch `master`.
+> - Change to the branch `main`.
 > - Create another branch called `less-salt`
->   - Note! makes sure you are on master branch when you create the less-salt branch
->   - A safer way would be to explicitly mention to create from the master branch
+>   - Note! makes sure you are on main branch when you create the less-salt branch
+>   - A safer way would be to explicitly mention to create from the main branch
 >     as shown below
 > ```shell
->     git branch less-salt master
+>     git branch less-salt main
 > ```
 > - where you reduce the amount of salt.
 > - Commit your changes to the `less-salt` branch.
@@ -226,7 +226,7 @@ $ git graph
 >
 >   experiment
 > * less-salt
->   master
+>   main
 >
 > $ git graph
 >
@@ -234,7 +234,7 @@ $ git graph
 > | * 6feb49d (experiment) maybe little bit less cilantro
 > | * 7cf6d8c let us try with some cilantro
 > |/
-> * dd4472c (master) we should not forget to enjoy
+> * dd4472c (main) we should not forget to enjoy
 > * 2bb9bb4 add half an onion
 > * 2d79e7e adding ingredients and instructions
 > ```
@@ -243,8 +243,8 @@ $ git graph
 >
 > ![]({{ site.baseurl }}/fig/gitink/git-branch-2.svg)
 >
-> - Now switch to `master`.
-> - Add and commit the following `README.md` to `master`:
+> - Now switch to `main`.
+> - Add and commit the following `README.md` to `main`:
 >
 > ```markdown
 > # Guacamole recipe
@@ -257,7 +257,7 @@ $ git graph
 > ```shell
 > $ git graph
 >
-> * 40fbb90 (HEAD -> master) draft a readme
+> * 40fbb90 (HEAD -> main) draft a readme
 > | * bf59be6 (less-salt) reduce amount of salt
 > |/
 > | * 6feb49d (experiment) maybe little bit less cilantro
@@ -287,14 +287,14 @@ $ git graph
   $ cd recipe-branching
   $ git checkout experiment
   $ git checkout less-salt
-  $ git checkout master
+  $ git checkout main
   $ git graph
   ```
 - Or call a helper to un-stuck it for you.
 
 
 It turned out that our experiment with cilantro was a good idea.
-Our goal now is to merge `experiment` into `master`.
+Our goal now is to merge `experiment` into `main`.
 
 First we make sure we are on the branch we wish to merge **into**:
 
@@ -303,10 +303,10 @@ $ git branch
 
   experiment
   less-salt
-* master
+* main
 ```
 
-Then we merge `experiment` into `master`:
+Then we merge `experiment` into `main`:
 
 ```shell
 $ git merge experiment
@@ -319,7 +319,7 @@ We can verify the result in the terminal:
 ```shell
 $ git graph
 
-*   c43b24c (HEAD -> master) Merge branch 'experiment'
+*   c43b24c (HEAD -> main) Merge branch 'experiment'
 |\
 | * 6feb49d (experiment) maybe little bit less cilantro
 | * 7cf6d8c let us try with some cilantro
@@ -343,14 +343,14 @@ To view the branches that are merged into the current branch we can use the comm
 $ git branch --merged
 
   experiment
-* master
+* main
 ```
 
 We are also happy with the work on the `less-salt` branch. Let us merge that
-one, too, into `master`:
+one, too, into `main`:
 
 ```shell
-$ git branch  # make sure you are on master
+$ git branch  # make sure you are on main
 $ git merge less-salt
 ```
 
@@ -361,7 +361,7 @@ We can verify the result in the terminal:
 ```shell
 $ git graph
 
-*   4f00317 (HEAD -> master) Merge branch 'less-salt'
+*   4f00317 (HEAD -> main) Merge branch 'less-salt'
 |\
 | * bf59be6 (less-salt) reduce amount of salt
 * |   c43b24c Merge branch 'experiment'
@@ -404,7 +404,7 @@ $ git branch --merged
 
   experiment
   less-salt
-* master
+* main
 ```
 
 This means we can delete the branches:
@@ -425,7 +425,7 @@ Compare in the terminal:
 ```shell
 $ git graph
 
-*   4f00317 (HEAD -> master) Merge branch 'less-salt'
+*   4f00317 (HEAD -> main) Merge branch 'less-salt'
 |\
 | * bf59be6 reduce amount of salt
 * |   c43b24c Merge branch 'experiment'
@@ -450,13 +450,13 @@ may have a hard time finding them as there is no branch pointing to them.
 
 > ## Exercise: encounter a fast-forward merge
 >
-> 1. Create a new branch from `master` and switch to it.
+> 1. Create a new branch from `main` and switch to it.
 > 2. Create a couple of commits on the new branch (for instance edit `README.md`):
 >
 >     ![]({{ site.baseurl }}/fig/gitink/git-pre-ff.svg)
 >
-> 3. Now switch to `master`.
-> 4. Merge the new branch to `master`.
+> 3. Now switch to `main`.
+> 4. Merge the new branch to `main`.
 > 5. Examine the result with `git graph`.
 > 6. Have you expected the result? Discuss what you see.
 {: .challenge}
@@ -470,12 +470,12 @@ may have a hard time finding them as there is no branch pointing to them.
 
 > ## (Optional) Exercise: Moving commits to another branch
 >
-> Sometimes it happens that we commit to the wrong branch, e.g. to `master`
+> Sometimes it happens that we commit to the wrong branch, e.g. to `main`
 > instead of a feature branch.
 > This can easily be fixed:
-> 1. Make a couple of commits to `master`, then realize these should have been on
+> 1. Make a couple of commits to `main`, then realize these should have been on
 >    a new feature branch.
-> 2. Create a new branch from `master`, and rewind `master` back using `git reset --hard <hash>`.
+> 2. Create a new branch from `main`, and rewind `main` back using `git reset --hard <hash>`.
 > 3. Inspect the situation with `git graph`. Problem solved!
 {: .challenge}
 
@@ -486,16 +486,16 @@ may have a hard time finding them as there is no branch pointing to them.
 > (instead of creating an explicit merge commit).
 > **Note that rebasing changes history and should not be done on public commits!**
 > 1. Create a new branch, and make a couple of commits on it.
-> 2. Switch back to `master`, and make a couple of commits on it.
+> 2. Switch back to `main`, and make a couple of commits on it.
 > 3. Inspect the situation with `git graph`.
-> 4. Now rebase the new branch on top of `master` by first switching to the new branch, and then `git rebase master`.
+> 4. Now rebase the new branch on top of `main` by first switching to the new branch, and then `git rebase main`.
 > 5. Inspect again the situation with `git graph`. Notice that the commit hashes have changed - think about why!
 {: .challenge}
 
 > ## (Optional) Exercise: Squashing commits
 >
 > Sometimes you may want to *squash* incomplete commits, particularly before
-> merging or rebasing with another branch (typically `master`) to get a cleaner history.
+> merging or rebasing with another branch (typically `main`) to get a cleaner history.
 > **Note that squashing changes history and should not be done on public commits!**
 > 1. Create *two* small but related commits on a new feature branch, and inspect with `git graph`.
 > 2. Do a *soft* reset with `git reset --soft HEAD~2`. This rewinds the current branch
@@ -542,8 +542,8 @@ $ git checkout -b new-feature  # create branch, switch to it
 $ git commit                   # work, work, work, ...
                                # test
                                # feature is ready
-$ git checkout master          # switch to master
-$ git merge new-feature        # merge work to master
+$ git checkout main          # switch to main
+$ git merge new-feature        # merge work to main
 $ git branch -d new-feature    # remove branch
 ```
 
@@ -554,12 +554,12 @@ Or you want some throw-away branch for debugging:
 $ git checkout -b wild-idea
                                # work, work, work, ...
                                # realize it was a bad idea
-$ git checkout master
+$ git checkout main
 $ git branch -D wild-idea      # it is gone, off to a new idea
                                # -D because we never merged back
 ```
 
-No problem: we worked on a branch, branch is deleted, `master` is clean.
+No problem: we worked on a branch, branch is deleted, `main` is clean.
 
 ---
 

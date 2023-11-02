@@ -28,7 +28,7 @@ Remember that a git remote is simply a copy of the `.git` directory. It contains
 
 > ## Discussion
 >
-> What do you think will happen if two collaborators make their own sequence of commits on `master` and try to push them to the same remote?
+> What do you think will happen if two collaborators make their own sequence of commits on `main` and try to push them to the same remote?
 {: .discussion}
 
 To make sure that you don't end up with a mess of conflicting commits, it's essential to have an agreed strategy for how to manage your contributions.
@@ -37,7 +37,7 @@ There are different models that can work, and depending on the complexity of eac
 
 There's a good discussion of different models, including git-flow [here](https://www.gitkraken.com/learn/git/git-flow).
 
-To be absolutely sure your local work won't conflict with someone else's, always work on your own branch. Don't commit directly to `master`, but only merge your branch onto `master` after discussion with your collaborators, or through a pull request (discussed below).
+To be absolutely sure your local work won't conflict with someone else's, always work on your own branch. Don't commit directly to `main`, but only merge your branch onto `main` after discussion with your collaborators, or through a pull request (discussed below).
 
 > ## Challenge
 >

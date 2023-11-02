@@ -122,7 +122,7 @@ You'll see that GitHub has given us the instructions for how to do this under th
 
 ```shell
 $ git remote add origin https://github.com/<user>/recipe.git
-$ git push -u origin master
+$ git push -u origin main
 ```
 
 You should now see something similar to:
@@ -134,8 +134,8 @@ Compressing objects: 100% (4/4), done.
 Writing objects: 100% (4/4), 259.80 KiB | 0 bytes/s, done.
 Total 4 (delta 0), reused 0 (delta 0)
 To github.com:bast/recipe.git
- * [new branch]      master -> master
-Branch master set up to track remote branch master from origin.
+ * [new branch]      main -> main
+Branch main set up to track remote branch main from origin.
 ```
 
 **Reload your GitHub project website and - taa-daa - your commits should now be
@@ -148,7 +148,7 @@ When those two lines of code were run, two commands were given. The first was to
 The second was to push our local changes to that remote. That command was:
 
 ```
-git push -u origin master
+git push -u origin main
 ```
 
 This is in the format:
