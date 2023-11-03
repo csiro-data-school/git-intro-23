@@ -38,7 +38,8 @@ repository"){:class="img-responsive"}
   <br>
   Source: <a href="https://twitter.com/jay_gee/status/703360688618536960">https://twitter.com/jay_gee/status/703360688618536960</a>
 </div>
-
+  
+  
 Software development is often not linear:
 
 - We typically need at least one version of the code to "work" (to compile, to give expected results, ...).
@@ -121,7 +122,7 @@ Let's create a branch called `experiment` where we add cilantro to `ingredients.
 ```shell
 $ git branch experiment main   # create branch called "experiment" from main
                                  # pointing to the present commit
-$ git checkout experiment        # switch to branch "experiment"
+$ git switch experiment        # switch to branch "experiment"
 $ git branch                     # list all local branches and show on which branch we are
 ```
 
@@ -165,8 +166,10 @@ $ git graph
 
 ---
 
-> ## Interlude: Different meanings of "checkout"
+> ## Interlude: The multipurpose "checkout" command  
 >
+> Older versions of git used `git checkout` for the actions now handled by both `restore` and `switch`.
+> `git checkout` can still be found in a lot of documentation, Git tools, and scripts. 
 > Depending on the context `git checkout` can do very different actions:
 >
 > 1) Switch to a branch:
@@ -276,22 +279,6 @@ $ git graph
 ---
 
 ## Merging branches
-
-**If you got stuck in the above exercises**:
-
-- **Skip this unless you got stuck**.
-- Step out of the current directory: `$ cd ..`
-- Then:
-  ```
-  $ git clone https://github.com/coderefinery/recipe.git recipe-branching
-  $ cd recipe-branching
-  $ git checkout experiment
-  $ git checkout less-salt
-  $ git checkout main
-  $ git graph
-  ```
-- Or call a helper to un-stuck it for you.
-
 
 It turned out that our experiment with cilantro was a good idea.
 Our goal now is to merge `experiment` into `main`.
@@ -514,23 +501,23 @@ Let us pause for a moment and recapitulate what we have just learned:
 ```shell
 $ git branch               # see where we are
 $ git branch <name>        # create branch <name>
-$ git checkout <name>      # switch to branch <name>
+$ git switch <name>      # switch to branch <name>
 $ git merge <name>         # merge branch <name> (to current branch)
-$ git branch -d <name>     # delete branch <name>
-$ git branch -D <name>     # delete unmerged branch
+$ git branch -d <name>     # delete merged branch <name>
+$ git branch -D <name>     # delete unmerged branch <name>
 ```
 
 Since the following command combo is so frequent:
 
 ```shell
 $ git branch <name>        # create branch <name>
-$ git checkout <name>      # switch to branch <name>
+$ git switch <name>      # switch to branch <name>
 ```
 
 There is a shortcut for it:
 
 ```shell
-$ git checkout -b <name>   # create branch <name> and switch to it
+$ git switch -c <name>   # Create branch <name> and switch to it
 ```
 
 ### Typical workflows
@@ -538,11 +525,11 @@ $ git checkout -b <name>   # create branch <name> and switch to it
 With this there are two typical workflows:
 
 ```shell
-$ git checkout -b new-feature  # create branch, switch to it
+$ git switch -c new-feature  # create branch, switch to it
 $ git commit                   # work, work, work, ...
                                # test
                                # feature is ready
-$ git checkout main          # switch to main
+$ git switch main          # switch to main
 $ git merge new-feature        # merge work to main
 $ git branch -d new-feature    # remove branch
 ```
@@ -551,10 +538,10 @@ Sometimes you have a wild idea which does not work.
 Or you want some throw-away branch for debugging:
 
 ```shell
-$ git checkout -b wild-idea
+$ git switch -c wild-idea
                                # work, work, work, ...
                                # realize it was a bad idea
-$ git checkout main
+$ git switch main
 $ git branch -D wild-idea      # it is gone, off to a new idea
                                # -D because we never merged back
 ```
@@ -605,18 +592,18 @@ No problem: we worked on a branch, branch is deleted, `main` is clean.
 >    ```shell
 >    $ git add file.txt
 >    $ git branch new-branch
->    $ git checkout new-branch
+>    $ git switch new-branch
 >    $ git commit
 >    ```
 >    3.
 >    ```shell
->    $ git checkout -b new-branch
+>    $ git switch -c new-branch
 >    $ git add file.txt
 >    $ git commit
 >    ```
 >    4.
 >    ```shell
->    $ git checkout new-branch
+>    $ git switch new-branch
 >    $ git add file.txt
 >    $ git commit
 >    ```
@@ -627,12 +614,12 @@ No problem: we worked on a branch, branch is deleted, `main` is clean.
 > >
 > > 1. Both 2 and 3 would do the job. Note that in 2 we first stage the file, and then create the
 > >    branch and commit to it. In 1 we create the branch but do not switch to it, while in 4 we
-> >    don't give the `-b` flag to `git checkout` to create the new branch.
+> >    don't give the `-c` flag to `git switch` to create the new branch.
 > > 2. When you check out a branch name, HEAD will point to the most recent commit of that branch.
 > >    You can however check out a *particular hash*. This will bring your working directory back in
 > >    time to that commit, and your HEAD will be pointing to that commit but it will not be attached
 > >    to any branch. If you want to make commits in that state, you should instead create a new branch:
-> >    `git checkout -b test-branch <hash>`.
+> >    `git switch -c test-branch <hash>`.
 > > 3. An orphaned commit is a commit that does not belong to any branch, and therefore doesn't have
 > >    any parent commits. This could happen if you make a commit in a detached HEAD state. Commits
 > >    rarely vanish in Git, and you could still find the orphaned commit using `git reflog`.

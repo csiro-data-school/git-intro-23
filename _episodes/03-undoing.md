@@ -18,9 +18,11 @@ keypoints:
 
 The whole point of version control is that you can be see and retrieve previous snapshots of your work.
 
-With Git, if you have committed (made a snapshot) of a file, you can get it back, even if it gets deleted or modified in the future.
+With Git, if you have committed (made a snapshot) of a file, you can get it back, even if it gets deleted 
+or modified in the future.
 
-Some commands will modify the hitory of a Git repository. This is generally a **very bad** idea, and you should only do it if you're really confident you know what you're doing.
+Some commands will modify the hitory of a Git repository. This is generally a **very bad** idea, and you 
+should only do it if you're really confident you know what you're doing.
 
 If changes are **uncommitted**, they are not safe, and if they are deleted, they are gone.
 
@@ -72,24 +74,27 @@ dd4472c we should not forget to enjoy
 
 ### Undo unstaged/uncommitted changes
 
+`git restore` is used to restore a file, or all files, back to a previously commited state.
+  
+Note: Older versions of git used `git checkout <file>` instead of `restore`. 
+
 DANGER!! 
 
-This is a command that **permanently deletes** changes
-that haven't been staged/committed!
+This command **permanently deletes** any changes that haven't been staged/committed!
 
 ### Modify before staging
 
 - Make a silly change to repo, do not stage it or commit it.
 - Inspect the change with `git status` and `git diff`.
-- Now undo the change with `git checkout <file>`.
-- Verify that the change is gone with `git status` and `git diff`.
-
+- Now undo the change with `git restore <file>`.
+- Verify that the change is gone with `git status` and `git diff`. 
+  
 ### Modify after staging
 
 - Make a reasonable change to a project, stage it.
 - Make a silly change after you have staged the reasonable change.
 - Inspect the situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
-- Now undo the silly change with `git checkout <file>`.
+- Now undo the silly change with `git restore <file>`.
 - Inspect the new situation with `git status`, `git diff`, `git diff --staged`, and `git diff HEAD`.
 
 ---
@@ -104,27 +109,36 @@ that haven't been staged/committed!
 > 
 > > ## Solution to Challenge 2
 > > 
-> > As long as a file was committed, you can get it back with `git checkout <file>`, but Git isn't magic - you won't have any changes that weren't committed.
+> > As long as a file was committed, you can get it back with `git restore <file>`, but Git isn't 
+> > magic - you won't have any changes that weren't committed.
 > {: .solution}
 {: .challenge}
 
 ## Recovering a previous versions
 
-Because git stores the complete history of whatever snapshots you have recorded, you can step back to anyone of them at different levels of detail, from the complete working directory, to single files, even to single changes within files.
+Because git stores the complete history of whatever snapshots you have recorded, you can step back 
+to anyone of them at different levels of detail, from the complete working directory, to single files, 
+even to single changes within files.
 
-To get back to a previous state for the whole working directory, you can use `git checkout [commit]`. This can be useful for having a look at files, but you'll get a warning about a detached HEAD (more discussion later).
+To get back to a previous state for the whole working directory, you can use `git restore [-s <commit>] .`. 
+Jumping back to a previous commit can be useful for having a look at files, but you may get a warning about 
+a detached HEAD (more discussion later).
 
 ### Recovering previous versions of single files
 
-Often it's useful to be able to access a previous version of a particular file. When the `checkout` command is given a file path (along with a reference to a commit) it will update that path to the previous state.
+Often it's useful to be able to access a previous version of a particular file. When the `restore` 
+command is given a file path (along with a reference to a commit with "-s" or "--source=") it will 
+update that path to the previous state.
 
-Let's see that with our recipe. If we wanted to get `ingredients.txt` back to its state before the addition of the onion, we could run
+Let's see that with our recipe. If we wanted to get `ingredients.txt` back to its state before the 
+addition of the onion, we could run
 
 ```
-git checkout 2d79e7e ingredients.txt
+git restore -s 2d79e7e ingredients.txt
 
 Updated 1 path from 2d79e7e
 ```
 
-If you run `git status` you'll see that the changes to the file `ingredients.txt`, bringing it back to the previous state, are already staged and ready to be committed.
+If you run `git status` you'll see that the changes to the file `ingredients.txt`, bringing it back to the 
+previous state, are already staged and ready to be committed.
 

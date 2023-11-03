@@ -80,7 +80,7 @@ We will make sense of this information during this lesson.
 
 - Remember Git is a *version control system*: it records snapshots and tracks the content of a folder as it changes over time.
 - Every time we **commit** a snapshot, Git records a snapshot of the **entire project**, saves it, and assigns it a version.  
-- It does this efficiently, by recording just the changes from one snapshot to the next, called the 'diff'. 
+- It does this efficiently, by recording just the changes from one snapshot to the next, called the **diff**. 
 - These snapshots are kept inside the `.git` sub-folder.
 - If we remove `.git`, we remove the repository and history (but keep the working directory!).
 - `.git` uses relative paths - you can move the whole thing somewhere else and it will still work
