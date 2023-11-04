@@ -45,7 +45,7 @@ To be absolutely sure your local work won't conflict with someone else's, always
 Lots of open source projects welcome contributions from the community, but clearly don't want to give write access to just anyone. Instead, a very commonly used approach is to accept pull requests from _forked_ versions of the repository.
 
 ### Forking a repo
-Forking a repository is making your own copy of a remote. For example, the a Data School example repo is hosted at 
+Forking a repository is making your own copy of a remote. For example, a Data School example repo is hosted at 
 `bitbucket.csiro.au/scm/dat/programmatic-data-example`. By forking that repository, you can have your own copy, retaining 
 the complete history of the project, at `bitbucket.csiro.au/scm/<your_username>/programmatic-data-example`.  
 
@@ -68,7 +68,7 @@ organisational, and record-keeping tool. A common working pattern, when using Gi
 body of work on a separate branch and then, rather than doing a `git merge`, instead create a pull request. 
 In doing so, you can:
 * Invite collaborators to review your changes
-* Create discussion around the changes (saved to history)
+* Create discussion around the changes (with discussions saved for posterity)
 * Continue to make further edits to your changes before finally merging
 * Save a formalised record of these steps having taken place  
   
@@ -94,8 +94,10 @@ as "reviewers" of the request, before confirming the pull request.
 With the pull request open, options include looking at the commits and file changes involved, writing discussion
 comments, starting an official review, making edits, etc.. The final goal would usually be the 'Merge' button,
 to the top-right, however other outcomes may be to decline or delete the pull request. 
-
-
+  
+---
+  
+  
 > ## Challenge
 >
 > Form teams of 2-3 people. One person will start.
@@ -103,21 +105,23 @@ to the top-right, however other outcomes may be to decline or delete the pull re
 > Person 1:
 > 1. One person from each team should create a new Bitbucket repository named 'favourite-things'.
 > 2. Copy the supplied `git clone` command to create a local copy.
-> 3. Create a file named `README.md` and list a few of your favourite things within it.
+> 3. Locally, create a file named `README.md` and list a few of your favourite things within it.
 > 4. Use `git add`, `git commit` and `git push` to move your new file back to the remote.
-> 5. In the Bitbucket repository, click 'Repository Settings' in the lefthand menu, followed by 'Repository permissions'.
-> 6. Use the form to give "User access" with "Write" permissions to your team member(s).
+> 5. In the Bitbucket repository, click 'Repository Settings' in the lefthand menu, followed by 'Repository permissions'.  Use the form to give "User access" with "Write" permissions to your team member(s). ![bitbucket pull request menu](../fig/bitbucket/adduser.png)  
+> 6. Share the repository link to your team member(s).
 >  
-> ![bitbucket pull request menu](../fig/bitbucket/adduser.png)  
->
-> 7. Share the repository link to your team member(s).
->
+>  
 > After this, team member(s):
 > 1. Use `git clone` to create a local copy of the 'favourite-things' repository.
-> 2. Create and switch to a new branch (with a meaningful name).
+> 2. Create and `switch` to a new branch (with a meaningful name).
 > 3. Edit the `README.md` file to add a few of your own favourite things to it.
 > 4. Use `git add`, `git commit` and `git push` to get your changes to the remote (still on your new branch).
 > 5. On Bitbucket create a Pull Request that would merge your new branch into the original.
->
+>  
+>  
 > Together, explore the created Pull Request(s) on Bitbucket and finally "merge" them. 
+>  
+>  
+> Bonus discussion: Why was the suggested filename 'README.md' specifically?  
+>  
 {: .challenge}
