@@ -59,46 +59,40 @@ There are different types of remotes:
 
 ---
 
-## GitHub
+## Bitbucket
 
-One option to host your repository on the web is [GitHub](https://github.com).
-
-GitHub is a for-profit service that hosts remote git repositories for you. It
-offers a nice HTML user interface to browse the repositories and handles many
-things very nicely.
-
-It is free for public projects and hosting private projects costs a monthly fee
-(but educational discounts exist). The free part of the service has made it
-very popular with many open source providers.
+CSIRO has an enterprise bitbucket server [bitbucket.csiro.au](bitbucket.csiro.au) 
+available for staff use. It offers a nice HTML user interface to browse the repositories 
+and handles many things very nicely. Accounts use your CSIRO credentials. 
 
 ---
 
-## Set up GitHub account
-
-By now you should already have set up a GitHub account but if you haven't,
-please do so [here](https://github.com/join). 
-
----
-
-## Create a new repository on GitHub
+## Create a new repository on Bitbucket
 
 1. Login
-2. Click on "Repositories"
-3. Click on the green button "New"
+2. Click on your user profile icon, in the top-right corner, then "View Profile"
+3. Click "Create Repository"
 
-On this page choose a project name (screenshot).
+On this page choose a repository name and description (screenshot).
 
-For the sake of this exercise **do not select**
-"Initialize this repository with a README" (what will happen if you do?).
+![create new repo on bitbucket](../fig/bitbucket/create.png)
+  
 
-![create new repo on github](../fig/github/1.jpg)
+After you then click "Create repository", you will see a page similar to:
 
-
-Once you click the green "Create repository", you will see a page similar to:
-
-![github repo setup page](../fig/github/2.jpg)
-
-This effectively does the following on GitHub’s servers:  
+![github repo setup page](../fig/bitbucket/init.png)  
+  
+Note that this screen is telling us exactly what to do to get started depending on different scenarios:
+1. If creating the Bitbucket repository was the very first thing we'd done, before starting work (great
+forward planning!) then we could **clone** the *empty* repository and start working in it. 
+2. If we'd started working on files, but had never run **git init** and started performing local git 
+opertaions, then it tells us how to now start tracking those files. However, it also then tells us how 
+to link to this online repository, adding it's url as the "remote origin", through `git remote add`. 
+**This is where we are.** 
+3. The final scenario would be less used. It's only for when a repository had already been linked to a remote
+but now you'd like to point to a different one, setting a different remote url.  
+  
+Creating the repository on Bitbucket effectively did the equivalent to this on the Bitbucket servers:  
 
 ```
 $ mkdir recipe 
@@ -107,22 +101,27 @@ $ git init
 ```
 
 
-## Linking our local repository to GitHub
+## Linking our local repository to Bitbucket
 
-To be able to send our local changes to GitHub, we need to tell the local repository that the one we just created on GitHub's servers exists. To do this, we create a 'remote'. Git repositories can have any number of remotes, although it is by far the most common to only use one. Each git remote is given a name so that it can be referred to easily. The default remote name is `origin`.
+To be able to send our local changes to Bitbucket, we need to tell the local repository that the one we just 
+created on Bitbucket's servers exists. To do this, we add a 'remote'. Git repositories can have any number of 
+remotes, although it is by far the most common to only use one. Each git remote is given a name so that it can 
+be referred to easily. The default remote name is `origin`.
 
-You'll see that GitHub has given us the instructions for how to do this under the option
+As noted above, Bitbucket has provided us the instructions for how to do this under the scenario:
 
-> **... or push an existing repository from the command line**
+> **My code is ready to be pushed**
 
-1. Now go to your guacamole repository on your computer.
+1. Go back to your guacamole repository on your computer.
 2. Check that you are in the right place with `git status`.
-3. Copy paste the two lines to the terminal and execute those, in my case (**you
+3. We'll copy and paste the instructed commands from Bitbucket, however, we've already run `git init` and
+already committed files, so we can ignore the first several steps, so...
+3. Copy and paste just the last two lines to the terminal and execute those, in my case (**you
   need to replace the "user" part and possibly also the repository name if you gave it a different one**):
 
 ```shell
-$ git remote add origin https://github.com/<user>/recipe.git
-$ git push -u origin main
+$ git remote add origin https://bitbucket.csiro.au/scm/<user>/recipe.git
+$ git push -u origin HEAD:main
 ```
 
 You should now see something similar to:
@@ -133,19 +132,20 @@ Delta compression using up to 4 threads.
 Compressing objects: 100% (4/4), done.
 Writing objects: 100% (4/4), 259.80 KiB | 0 bytes/s, done.
 Total 4 (delta 0), reused 0 (delta 0)
-To github.com:bast/recipe.git
+To https://bitbucket.csiro.au/scm/user/recipe.git
  * [new branch]      main -> main
-Branch main set up to track remote branch main from origin.
+branch 'main' set up to track 'origin/main'.
 ```
 
-**Reload your GitHub project website and - taa-daa - your commits should now be
+**Refresh your Bitbucket project website and - taa-daa - your commits should now be
 online!**
 
 What just happened? **Think of publishing a repository as uploading the `.git` part online**.
 
-When those two lines of code were run, two commands were given. The first was to add a reference to the GitHub repository, and call it `origin`.
+When those two lines of code were run, two commands were given. The first was to add a reference to the 
+Bitbucket repository, and call it `origin`.
 
-The second was to push our local changes to that remote. That command was:
+The second was to **push** our local changes to that remote. That command was:
 
 ```
 git push -u origin main
@@ -156,8 +156,6 @@ This is in the format:
 ```
 git push -u <remote-name> <branch-name>
 ```
-
-We won't cover branches in this lesson, but they are a way of working on parallel histories.
 
 If you've got a simple repository with only one remote and one repository, you can simply run `git push`.
 
@@ -173,11 +171,16 @@ If you've got a simple repository with only one remote and one repository, you c
 
 ## Getting changes from the remote
 
-Of course we don't want information to only go one way - if the remote has changes to the project from a collaborator we need to get those onto our local machine. To do this, we're doing the opposite of a `push`, so it's helpfully called a `pull`.
+Of course we don't want information to only go one way - if the remote has changes to the project from a collaborator 
+we need to get those onto our local machine. To do this, we're doing the opposite of a `push`, so it's helpfully 
+called a `pull`.
 
 > ## Challenge 2
 > 
-> Make a change to your repository using the GitHub web interface (look for the pencil icon to edit a file).
+> Make a change to your repository using the Bitbucket web interface: 
+> 1. Click on a file and then click 'Edit' (top right)
+> 2. Write something new and then click 'Commit' (bottom left)
+> 3. Fill in commit message (as if you were doing a `commit -m "something"`) and click 'Commit' again
 >
 > Once you've made a change, use `git pull` in your terminal to get the changes onto your local machine.
 >
@@ -185,4 +188,5 @@ Of course we don't want information to only go one way - if the remote has chang
 {: .challenge}
 
 
-Similar to `git push`, if you have multiple remotes and branches, you need to specify which you are referring to by using the format `git pull <origin-name> <branch-name>`, but for our purposes `git pull` is sufficient.
+Similar to `git push`, if you have multiple remotes and branches, you need to specify which you are referring 
+to by using the format `git pull <origin-name> <branch-name>`, but for our purposes `git pull` is sufficient.
