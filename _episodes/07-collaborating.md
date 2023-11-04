@@ -39,37 +39,85 @@ There's a good discussion of different models, including git-flow [here](https:/
 
 To be absolutely sure your local work won't conflict with someone else's, always work on your own branch. Don't commit directly to `main`, but only merge your branch onto `main` after discussion with your collaborators, or through a pull request (discussed below).
 
-> ## Challenge
->
-> - Go to [https://github.com/csiro-mlai/git-practice/](https://github.com/csiro-mlai/git-practice/) and clone the repository. Create a new branch (give it a meaningful name!) on your local copy and make a change to the readme (whatever you like). 
-> - Push your changes to the remote.
-> - Once other collaborators have pushed changes, see if you can pull their contributions to your local repo.
-{: .challenge}
 
 ## A remote without write access
 
 Lots of open source projects welcome contributions from the community, but clearly don't want to give write access to just anyone. Instead, a very commonly used approach is to accept pull requests from _forked_ versions of the repository.
 
 ### Forking a repo
-Forking a repository is making your own copy of a remote. For example, the pytorch repo is hosted at `github.com/pytorch/pytorch`. By forking that repository, you can have your own copy of the complete history of the project at `github.com/[your_username]/pytorch`. To fork a repository on github, click on the Fork button at the top right of the page.
+Forking a repository is making your own copy of a remote. For example, the a Data School example repo is hosted at 
+`bitbucket.csiro.au/scm/dat/programmatic-data-example`. By forking that repository, you can have your own copy, retaining 
+the complete history of the project, at `bitbucket.csiro.au/scm/<your_username>/programmatic-data-example`.  
 
-<img src="{{ site.baseurl }}/fig/github-fork.jpg" width="60%">
+To fork a repository on Bitbucket, click on the **Create Fork** button in the lefthand menu of a repository's page.  
+
+![bitbucket repo fork](../fig/bitbucket/fork.png)
 
 ### Submitting a pull request
 
 To contribute a change to a repository that you don't have write access to, you first of all need to make your own copy (fork the repo) which you do have write access to.
-
 You can then make your changes to the repo, and push them to your own fork.
 
 To get them into the original repo (if that's what you want), you need to ask the maintainers of that repository to accept them, through a _pull request_.
+You are requesting that the repository "pull" in your changes. 
 
-Github has really good support for this process, and gives helpful prompts if you push a commit that is likely to be a pull request candidate.
+### Pull requests as a collaborative framework
+
+Pull requests can also be useful on a repository that you *do* have write permissions on, as a collaborative,
+organisational, and record-keeping tool. A common working pattern, when using Git in a team, is to complete a
+body of work on a separate branch and then, rather than doing a `git merge`, instead create a pull request. 
+In doing so, you can:
+* Invite collaborators to review your changes
+* Create discussion around the changes (saved to history)
+* Continue to make further edits to your changes before finally merging
+* Save a formalised record of these steps having taken place  
+  
+An open pull request may continue to receive further commits, by pushing changes to the same branch. 
+This allows a pull request to act as a draft step, under review, until finally approved to 'merge'.  
+
+---
+
+## Pull requests on Bitbucket
+
+The option to create a Pull request on Bitbucket may be found in the lefthand menu of a repository's page. 
+
+![bitbucket pull request menu](../fig/bitbucket/pull-1.png)
+
+You'll then be asked to select a source branch (the branch with new work) and a target or destination branch
+(the branch to `merge` into). 
+
+![bitbucket pull request menu](../fig/bitbucket/pull-2.png)
+
+Next you'll be able to write a description of what the pull request is about, and request specific teammates 
+as "reviewers" of the request, before confirming the pull request. 
+  
+With the pull request open, options include looking at the commits and file changes involved, writing discussion
+comments, starting an official review, making edits, etc.. The final goal would usually be the 'Merge' button,
+to the top-right, however other outcomes may be to decline or delete the pull request. 
+
 
 > ## Challenge
 >
-> Go to [https://github.com/csiro-mlai/pull-request-practice](https://github.com/csiro-mlai/pull-request-practice) - a repo that you do not have write access to.
-> 1. Fork the repo to your personal account
-> 2. Clone your forked repo
-> 3. Make a change in your local repo and push it to your forked copy
-> 4. Submit a pull request to the original repo
+> Form teams of 2-3 people. One person will start.
+> 
+> Person 1:
+> 1. One person from each team should create a new Bitbucket repository named 'favourite-things'.
+> 2. Copy the supplied `git clone` command to create a local copy.
+> 3. Create a file named `README.md` and list a few of your favourite things within it.
+> 4. Use `git add`, `git commit` and `git push` to move your new file back to the remote.
+> 5. In the Bitbucket repository, click 'Repository Settings' in the lefthand menu, followed by 'Repository permissions'.
+> 6. Use the form to give "User access" with "Write" permissions to your team member(s).
+>  
+> ![bitbucket pull request menu](../fig/bitbucket/adduser.png)  
+>
+> 7. Share the repository link to your team member(s).
+>
+> After this, team member(s):
+> 1. Use `git clone` to create a local copy of the 'favourite-things' repository.
+> 2. Create and switch to a new branch (with a meaningful name).
+> 3. Edit the `README.md` file to add a few of your own favourite things to it.
+> 4. Use `git add`, `git commit` and `git push` to get your changes to the remote (still on your new branch).
+> 5. On Bitbucket create a Pull Request that would merge your new branch into the original.
+>
+> Together, explore the created Pull Request(s) on Bitbucket and finally "merge" them. 
 {: .challenge}

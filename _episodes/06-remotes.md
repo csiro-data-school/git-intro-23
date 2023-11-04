@@ -55,7 +55,6 @@ There are different types of remotes:
   commercial site.  Many universities have their own private GitLab servers
   set up.
 - [Bitbucket](https://bitbucket.org) is yet another popular commercial site.
-- CSIRO has an enterprise bitbucket server [bitbucket.csiro.au](bitbucket.csiro.au)
 
 ---
 
@@ -69,7 +68,7 @@ and handles many things very nicely. Accounts use your CSIRO credentials.
 
 ## Create a new repository on Bitbucket
 
-1. Login
+1. Login at [bitbucket.csiro.au](bitbucket.csiro.au) 
 2. Click on your user profile icon, in the top-right corner, then "View Profile"
 3. Click "Create Repository"
 
@@ -80,17 +79,17 @@ On this page choose a repository name and description (screenshot).
 
 After you then click "Create repository", you will see a page similar to:
 
-![github repo setup page](../fig/bitbucket/init.png)  
+![bitbucket repo setup page](../fig/bitbucket/init.png)  
   
 Note that this screen is telling us exactly what to do to get started depending on different scenarios:
 1. If creating the Bitbucket repository was the very first thing we'd done, before starting work (great
 forward planning!) then we could **clone** the *empty* repository and start working in it. 
-2. If we'd started working on files, but had never run **git init** and started performing local git 
+2. If we'd started working on files, but had never run `git init` and started performing local git 
 opertaions, then it tells us how to now start tracking those files. However, it also then tells us how 
 to link to this online repository, adding it's url as the "remote origin", through `git remote add`. 
 **This is where we are.** 
 3. The final scenario would be less used. It's only for when a repository had already been linked to a remote
-but now you'd like to point to a different one, setting a different remote url.  
+but now you'd like change it to point this new one instead.  
   
 Creating the repository on Bitbucket effectively did the equivalent to this on the Bitbucket servers:  
 
