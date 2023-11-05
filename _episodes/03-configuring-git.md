@@ -123,9 +123,12 @@ Depending on your installation of git you might have a built-in basic GUI called
 This is free.
 Alternatively you might try a commercial git GUI. Here are some popular ones:
 
-* [Sublime merge](https://www.sublimemerge.com/) (macOS, Windows, Linux)
+* [Sourcetree](https://www.sourcetreeapp.com/) (macOS, Windows)  
+* [Sublime merge](https://www.sublimemerge.com/) (macOS, Windows, Linux) 
 * [Gitkraken](https://www.gitkraken.com/) (macOS, Windows, Linux) 
 * [Fork](https://git-fork.com/) (macOS, Windows)
+
+Sourcetree is available for CSIRO staff within the Software Center.  
 
 None of these are needed for this introductory tutorial, but they can be helpful to build understanding.
 
