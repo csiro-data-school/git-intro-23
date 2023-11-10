@@ -17,8 +17,8 @@ keypoints:
 
 # In-browser session
 
-- We will explore and visualize an **existing Git repository** on GitHub
-- The goal of this episode is not to teach GitHub, but rather to get a glimpse of the 
+- We will explore and visualize an **existing Git repository** on BitBucket
+- The goal of this episode is not to teach BitBucket, but rather to get a glimpse of the 
 wider picture before going into the details.
 
 ---

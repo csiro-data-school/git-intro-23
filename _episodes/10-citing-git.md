@@ -83,7 +83,7 @@ For a growing number of scientists, though, the process looks like this:
   like CSIRO's [Data Access Portal](https://data.csiro.au/), possibly as soon as it's collected,
   and given its own
   [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI). 
-- The scientist creates a new repository on GitHub to hold their work.
+- The scientist creates a new repository on BitBucket to hold their work.
 - During analysis, they push changes to their scripts (and possibly some output files) to that repository.
   The scientist also uses the repository for their paper; that repository is then the hub for collaboration 
   with colleagues.

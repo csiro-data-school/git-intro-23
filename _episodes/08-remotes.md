@@ -163,7 +163,7 @@ If you've got a simple repository with only one remote and one repository, you c
 >
 > Make a change to your project and commit the changes locally. 
 >
-> Push the changes to your GitHub remote.
+> Push the changes to your BitBucket remote.
 > 
 > What information can you access about the commit you just made?
 {: .challenge}
