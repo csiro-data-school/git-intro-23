@@ -367,8 +367,7 @@ relatively.
 
 ## GUI tools
 
-We have seen how to make commits directly via the GitHub website, and also via command line. 
-But it is also possible to work from within a Git graphical user interface (GUI):
+It is also possible to work from within a Git graphical user interface (GUI):
 
 - [Sublime Merge](https://www.sublimemerge.com/)
 - [GitHub Desktop](https://desktop.github.com)

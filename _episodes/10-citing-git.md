@@ -83,7 +83,7 @@ For a growing number of scientists, though, the process looks like this:
   like CSIRO's [Data Access Portal](https://data.csiro.au/), possibly as soon as it's collected,
   and given its own
   [Digital Object Identifier](https://en.wikipedia.org/wiki/Digital_object_identifier) (DOI). 
-- The scientist creates a new repository on GitHub to hold their work.
+- The scientist creates a new repository on BitBucket to hold their work.
 - During analysis, they push changes to their scripts (and possibly some output files) to that repository.
   The scientist also uses the repository for their paper; that repository is then the hub for collaboration 
   with colleagues.
@@ -129,6 +129,22 @@ conditions others are welcome to use/modify your work.
 [Example](https://github.com/csiro-data-school/git-intro-23/blob/gh-pages/LICENSE.md)
 IM&T may help with this if necessary. 
   
-Similarly, a CITATION.md file may be useful to include a request for how you'd like your work to be cited
-(or include this within your README.md file).  
+Similarly, a citation file may be useful to include, with a request for how you'd like your work 
+to be cited. A special format is proposed specifically for this purpose, in the form of 
+a CITATION.cff file, containing a standardised set of information that is both human and
+machine readable. E.g.:  
   
+```
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Druskat
+    given-names: Stephan
+    orcid: https://orcid.org/1234-5678-9101-1121
+title: "My Research Software"
+version: 2.0.4
+doi: 10.5281/zenodo.1234
+date-released: 2021-08-11
+```
+
+More information is available here:  [citation-file-format.github.io](https://citation-file-format.github.io/)

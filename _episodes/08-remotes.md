@@ -74,12 +74,12 @@ and handles many things very nicely. Accounts use your CSIRO credentials.
 
 On this page choose a repository name and description (screenshot).
 
-![create new repo on bitbucket](../fig/bitbucket/create.png)
+![create new repo on bitbucket]({{ site.baseurl }}/fig/bitbucket/create.png)
   
 
 After you then click "Create repository", you will see a page similar to:
 
-![bitbucket repo setup page](../fig/bitbucket/init.png)  
+![bitbucket repo setup page]({{ site.baseurl }}/fig/bitbucket/init.png)  
   
 Note that this screen is telling us exactly what to do to get started depending on different scenarios:
 1. If creating the Bitbucket repository was the very first thing we'd done, before starting work (great
@@ -163,7 +163,7 @@ If you've got a simple repository with only one remote and one repository, you c
 >
 > Make a change to your project and commit the changes locally. 
 >
-> Push the changes to your GitHub remote.
+> Push the changes to your BitBucket remote.
 > 
 > What information can you access about the commit you just made?
 {: .challenge}

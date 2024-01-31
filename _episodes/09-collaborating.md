@@ -51,7 +51,7 @@ the complete history of the project, at `bitbucket.csiro.au/scm/<your_username>/
 
 To fork a repository on Bitbucket, click on the **Create Fork** button in the lefthand menu of a repository's page.  
 
-![bitbucket repo fork](../fig/bitbucket/fork.png)
+![bitbucket repo fork]({{ site.baseurl }}/fig/bitbucket/fork.png)
 
 ### Submitting a pull request
 
@@ -81,12 +81,12 @@ This allows a pull request to act as a draft step, under review, until finally a
 
 The option to create a Pull request on Bitbucket may be found in the lefthand menu of a repository's page. 
 
-![bitbucket pull request menu](../fig/bitbucket/pull-1.png)
+![bitbucket pull request menu]({{ site.baseurl }}/fig/bitbucket/pull-1.png)
 
 You'll then be asked to select a source branch (the branch with new work) and a target or destination branch
 (the branch to `merge` into). 
 
-![bitbucket pull request menu](../fig/bitbucket/pull-2.png)
+![bitbucket pull request menu]({{ site.baseurl }}/fig/bitbucket/pull-2.png)
 
 Next you'll be able to write a description of what the pull request is about, and request specific teammates 
 as "reviewers" of the request, before confirming the pull request. 
@@ -107,7 +107,7 @@ to the top-right, however other outcomes may be to decline or delete the pull re
 > 2. Copy the supplied `git clone` command to create a local copy.
 > 3. Locally, create a file named `README.md` and list a few of your favourite things within it.
 > 4. Use `git add`, `git commit` and `git push` to move your new file back to the remote.
-> 5. In the Bitbucket repository, click 'Repository Settings' in the lefthand menu, followed by 'Repository permissions'.  Use the form to give "User access" with "Write" permissions to your team member(s). ![bitbucket pull request menu](../fig/bitbucket/adduser.png)  
+> 5. In the Bitbucket repository, click 'Repository Settings' in the lefthand menu, followed by 'Repository permissions'.  Use the form to give "User access" with "Write" permissions to your team member(s). ![bitbucket pull request menu]({{ site.baseurl }}/fig/bitbucket/adduser.png)  
 > 6. Share the repository link to your team member(s).
 >  
 >  

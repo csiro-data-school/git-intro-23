@@ -19,7 +19,7 @@ keypoints:
 We’ll start by exploring how version control can be used to keep track of what one person did and when. 
 Even if you aren’t collaborating with other people, automated version control is much better than this situation:
 
-[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531](../fig/intro/phd101212s.png)](http://www.phdcomics.com)
+[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com/comics/archive_print.php?comicid=1531]({{ site.baseurl }}/fig/intro/phd101212s.png)](http://www.phdcomics.com)
   
   
 We've all been in this situation before: it seems unnecessary to have
@@ -36,19 +36,19 @@ think of it as a recording of your progress: you can rewind to start at the base
 document and play back each change you made, eventually arriving at your
 more recent version.
 
-![Changes Are Saved Sequentially](../fig/intro/play-changes.svg){: width="700" }
+![Changes Are Saved Sequentially]({{ site.baseurl }}/fig/intro/play-changes.svg){: width="700" }
 
 Once you think of changes as separate from the document itself, you
 can then think about "playing back" different sets of changes on the base document, ultimately
 resulting in different versions of that document. For example, two users can make independent
 sets of changes on the same document.
 
-![Different Versions Can be Saved](../fig/intro/versions.svg){: width="700" }
+![Different Versions Can be Saved]({{ site.baseurl }}/fig/intro/versions.svg){: width="700" }
 
 Unless multiple users make changes to the same section of the document - a conflict - you can
 incorporate two sets of changes into the same base document.
 
-![Multiple Versions Can be Merged](../fig/intro/merge.svg){: width="700" }
+![Multiple Versions Can be Merged]({{ site.baseurl }}/fig/intro/merge.svg){: width="700" }
 
 A version control system is a tool that keeps track of these changes for us,
 effectively creating different versions of our files. It allows us to decide
